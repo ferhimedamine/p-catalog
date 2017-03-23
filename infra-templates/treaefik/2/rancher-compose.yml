@@ -13,9 +13,9 @@ traefik-conf:
   retain_ip: true
   scale: 1
   start_on_create: true
-traefik:
+proxy:
   metadata:
-    traefik:
+    proxy:
   retain_ip: true
   start_on_create: true
   health_check:
