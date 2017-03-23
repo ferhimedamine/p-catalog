@@ -1,0 +1,38 @@
+version: '2'
+services:
+  traefik-conf:
+    image: rawmind/rancher-traefik:0.3.4-19
+    network_mode: none
+    volumes:
+    - /opt/tools
+    tty: true
+    labels:
+      io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+      io.rancher.container.start_once: 'true'
+  proxy:
+    cap_add:
+    - NET_ADMIN
+    image: rawmind/alpine-traefik:1.1.2-1
+    environment:
+      CONF_INTERVAL: '10'
+      TRAEFIK_ACME_EMAIL: test@traefik.io
+      TRAEFIK_ACME_ENABLE: 'false'
+      TRAEFIK_ACME_ONDEMAND: 'true'
+      TRAEFIK_ACME_ONHOSTRULE: 'true'
+      TRAEFIK_HTTPS_ENABLE: 'false'
+      TRAEFIK_HTTPS_PORT: '443'
+      TRAEFIK_HTTP_PORT: '80'
+    tty: true
+    volumes_from:
+    - traefik-conf
+    ports:
+    - 80:80/tcp
+    - 443:443/tcp
+    labels:
+      io.rancher.sidekicks: traefik-conf
+      io.rancher.container.hostname_override: container_name
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.global: 'true'traefik.enable: 'true'
+      traefik.alias: proxy
+      traefik.port: '8000'
+      traefik.domain: %{{environment_name}}.cloudbuzz.io
