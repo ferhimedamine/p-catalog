@@ -1,7 +1,0 @@
-name: Bind9 Domain Name Server
-description: |
-  traefik proxy
-version: v1.0.0-rancher1
-category: traefik
-labels:
-  io.rancher.orchestration.supported: 'cattle'
