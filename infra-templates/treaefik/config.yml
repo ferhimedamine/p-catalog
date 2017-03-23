@@ -1,4 +1,4 @@
-name: Bind9 Domain Name Server
+name: traefik proxy
 description: |
   traefik proxy
 version: v1.0.0-rancher1
