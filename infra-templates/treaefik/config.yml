@@ -1,7 +1,7 @@
 name: traefik proxy
 description: |
   traefik proxy
-version: v1.0.2
+version: "v1.0.2"
 category: proxy
 labels:
   io.rancher.orchestration.supported: 'cattle'
