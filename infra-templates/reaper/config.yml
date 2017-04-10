@@ -1,0 +1,7 @@
+name: rancher reaper
+description: |
+  bind to aws account, removes deleted hosts from rancher
+version: v0.0.1
+category: Applications
+labels:
+  io.rancher.orchestration.supported: 'cattle'
