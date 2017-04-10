@@ -9,9 +9,9 @@ stacks:
     templateId: 'library:infra*scheduler'
   - name: healthcheck
     templateId: 'library:infra*healthcheck'
-  - name: traefik
-    templateId: 'library:infra*traefik'
   - name: ecr
     templateId: 'library:infra*ecr'
   - name: nfs
     templateId: 'library:infra*nfs'
+  - name: traefik
+    templateId: 'private-library:infra*traefik'
