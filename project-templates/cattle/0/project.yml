@@ -1,5 +1,5 @@
-name: Cattle
-description: Default Cattle template
+name: custom-cattle
+description: custom cattle template
 stacks:
   - name: network-services
     templateId: 'library:infra*network-services'
