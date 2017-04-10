@@ -1,5 +1,5 @@
-name: custom-cattle
-description: custom cattle template
+name: Cattle
+description: Default Cattle template
 stacks:
   - name: network-services
     templateId: 'library:infra*network-services'
@@ -14,4 +14,4 @@ stacks:
   - name: nfs
     templateId: 'library:infra*nfs'
   - name: traefik
-    templateId: 'private-library:infra*traefik'
+    templateId: 'private:infra*traefik'
